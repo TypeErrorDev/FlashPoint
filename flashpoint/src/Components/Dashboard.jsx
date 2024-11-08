@@ -19,7 +19,7 @@ const Dashboard = () => {
   return (
     <div>
       <Nav />
-      <button className="bg-white " onClick={goBackHome}>
+      <button className="bg-white" onClick={goBackHome}>
         Click
       </button>
     </div>

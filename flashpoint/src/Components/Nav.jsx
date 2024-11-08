@@ -1,10 +1,10 @@
 const Nav = () => {
   return (
-    <div className="bg-slate-700 w-[485px] h-20 rounded-b-2xl shadow-lg shadow-[#86efac] flex justify-center flex-col items-center mb-40">
-      <div className="items-center text-3xl hover:border-e-zinc-500 hover:border-b hover:rounded-lg w-full text-center">
-        <p className="text-white ">Settings</p>
+    <div className="bg-slate-700 w-[380px] h-20 md:h-12 rounded-b-2xl shadow-md shadow-[#2e274e] flex justify-center md:justify-center flex-col md:flex-row items-center mb-40  transition-all duration-[150ms] md:w-[760px]">
+      <div className="items-center text-3xl md:text-[24px] w-full text-center ">
+        <p className="text-white">Settings</p>
       </div>
-      <div className="items-center text-3xl hover:border-e-zinc-500 hover:border-b hover:rounded-lg w-full text-center">
+      <div className="items-center text-3xl w-full text-center">
         <p>Signout</p>
       </div>
     </div>
