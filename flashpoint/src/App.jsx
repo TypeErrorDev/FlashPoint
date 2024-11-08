@@ -14,7 +14,7 @@ import Login from "./Components/Login";
 // ---------------------------
 const App = () => {
   return (
-    <div className="h-screen flex justify-center bg-[#7d8ec7] font-mono">
+    <div className="h-screen w-screen flex justify-center bg-[#7d8ec7] font-mono">
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />

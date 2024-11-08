@@ -33,14 +33,14 @@ const Login = () => {
       </h1>
       <input
         type="text"
-        className="bg-slate-200 p-4 mt-4 max-w-[250px] rounded-lg text-[#4a65bb] text-xl font-bold "
+        className="bg-slate-200 p-4 mt-4 max-w-[250px] rounded-lg text-[#4a65bb] text-xl font-bold focus:outline-none focus:ring-4 focus:ring-[#7d8ec7]/50"
         placeholder="Username"
         onChange={(e) => setUser(e.target.value)}
       />
 
       <button
         type="submit"
-        className="bg-[#334788] h-12 w-20 text-white rounded-xl mt-4 hover:bg-opacity-90"
+        className="bg-[#444da1] text-white py-2 px-6 mt-5 rounded-lg shadow-lg shadow-[#2e274e]/40 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring[#7d8ec7]/50"
         onClick={handleError}
       >
         Login
