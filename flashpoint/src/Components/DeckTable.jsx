@@ -1,4 +1,24 @@
 const DeckTable = () => {
+  //TODO: Create the rows for each deck in the database
+
+  const decks = [
+    {
+      name: "Deck 1",
+      count: 10,
+      points: 100,
+    },
+    {
+      name: "Deck 2",
+      count: 20,
+      points: 200,
+    },
+    {
+      name: "Deck 3",
+      count: 30,
+      points: 300,
+    },
+  ];
+
   return (
     <div className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -13,7 +33,10 @@ const DeckTable = () => {
                   <th scope="col" className="px-6 py-4 border text-center">
                     Count
                   </th>
-                  <th scope="col" className="px-6 py-4 border text-center">
+                  <th
+                    scope="col"
+                    className="hidden md:table-cell px-6 py-4 border text-center"
+                  >
                     Points
                   </th>
                   <th scope="col" className="px-6 py-4 border text-center">
@@ -21,6 +44,13 @@ const DeckTable = () => {
                   </th>
                 </tr>
               </thead>
+              <tbody>
+                <tr>
+                  <td className="px-6 py-4 text-center text-white hover:border-white">
+                    Test
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
