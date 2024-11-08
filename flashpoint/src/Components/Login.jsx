@@ -1,22 +1,35 @@
+// ---------------------------
+// Required imports
+// ---------------------------
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
+// ---------------------------
+// Code Begins
+// ---------------------------
 const Login = () => {
   const [user, setUser] = useState("");
-  const [submitLogin, setSubmitLogin] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     // TODO: figure out the submit function
     console.log({ user });
     setUser(user);
-    setSubmitLogin(true);
-    Navigate("/dashboard");
+    navigate("/dashboard");
+  };
+
+  const handleError = () => {
+    if (user === "") {
+      return alert("Please input your username"), setUser("");
+    } else {
+      return handleLogin();
+    }
   };
 
   return (
-    <div className="bg-white rounded-lg w-full max-w-[400px] h-[300px] text-zinc-500 text-xl text-center flex flex-col items-center justify-center">
+    <div className="bg-white rounded-lg w-full max-w-[400px] h-[300px] text-zinc-500 text-xl text-center flex flex-col items-center justify-center mt-80">
       <h1 className="text-xl text-[#382fb3] font-bold ">
-        {submitLogin ? `Welcome, ${user}` : "Please input your username"}
+        Please input your username
       </h1>
       <input
         type="text"
@@ -28,7 +41,7 @@ const Login = () => {
       <button
         type="submit"
         className="bg-[#334788] h-12 w-20 text-white rounded-xl mt-4 hover:bg-opacity-90"
-        onClick={handleLogin}
+        onClick={handleError}
       >
         Login
       </button>

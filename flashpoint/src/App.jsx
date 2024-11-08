@@ -9,9 +9,12 @@ import { Route, Routes } from "react-router-dom";
 import Dashboard from "./Components/Dashboard";
 import Login from "./Components/Login";
 
+// ---------------------------
+// Code Begins
+// ---------------------------
 const App = () => {
   return (
-    <div className="grid place-items-center h-screen bg-[#0d205f] font-mono">
+    <div className="h-screen flex justify-center bg-[#7d8ec7] font-mono">
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
