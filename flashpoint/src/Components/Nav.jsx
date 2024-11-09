@@ -3,12 +3,19 @@
 // ---------------------------
 import { useNavigate } from "react-router-dom";
 
+// ---------------------------
+// Import components
+// ---------------------------
+
+// ---------------------------
+// Code Begins
+// ---------------------------
 const Nav = () => {
   const navigate = useNavigate();
   //TODO: Add functionality to navigate to /settings
   const navigateToSettings = () => {
     console.log("Navigating to settings");
-    // navigate("/settings");
+    navigate("/settings");
   };
 
   const signout = () => {

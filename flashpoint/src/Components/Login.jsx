@@ -7,22 +7,16 @@ import { useNavigate } from "react-router-dom";
 // ---------------------------
 // Code Begins
 // ---------------------------
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [user, setUser] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // TODO: figure out the submit function
-    console.log({ user });
-    setUser(user);
-    navigate("/dashboard");
-  };
-
-  const handleError = () => {
-    if (user === "") {
-      return alert("Please input your username"), setUser("");
+    if (user) {
+      onLogin(); 
+      navigate("/dashboard");
     } else {
-      return handleLogin();
+      alert("Please input your username");
     }
   };
 
@@ -41,7 +35,7 @@ const Login = () => {
       <button
         type="submit"
         className="bg-[#444da1] text-white py-2 px-6 mt-5 rounded-lg shadow-lg shadow-[#2e274e]/40 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring[#7d8ec7]/50"
-        onClick={handleError}
+        onClick={handleLogin}
       >
         Login
       </button>

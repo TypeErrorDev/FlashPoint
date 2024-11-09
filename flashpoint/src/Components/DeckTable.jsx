@@ -1,23 +1,23 @@
 const DeckTable = () => {
   //TODO: Create the rows for each deck in the database
 
-  const decks = [
-    {
-      name: "Deck 1",
-      count: 10,
-      points: 100,
-    },
-    {
-      name: "Deck 2",
-      count: 20,
-      points: 200,
-    },
-    {
-      name: "Deck 3",
-      count: 30,
-      points: 300,
-    },
-  ];
+  // const decks = [
+  //   {
+  //     name: "Deck 1",
+  //     count: 10,
+  //     points: 100,
+  //   },
+  //   {
+  //     name: "Deck 2",
+  //     count: 20,
+  //     points: 200,
+  //   },
+  //   {
+  //     name: "Deck 3",
+  //     count: 30,
+  //     points: 300,
+  //   },
+  // ];
 
   return (
     <div className="flex flex-col">
