@@ -2,7 +2,7 @@
 // Required imports
 // ---------------------------
 import { Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // ---------------------------
 // Import components
@@ -17,8 +17,28 @@ import Settings from "./Components/Settings";
 // ---------------------------
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const handleLogin = () => setIsAuthenticated(true);
+  // ---------------------------
+  // TODO: I dont even know if this works. Need to confirm this
+  // ---------------------------
+  const [isAuthenticated, setIsAuthenticated] = useState(() => false);
+  const [username, setUsername] = useState(() => {
+    const savedUsername = localStorage.getItem("username");
+    return savedUsername ? savedUsername : "";
+  });
+
+  const handleLogin = (username) => {
+    console.log("handleLogin");
+    setUsername(username);
+    localStorage.setItem("username", username);
+    setIsAuthenticated(true);
+  };
+
+  useEffect(() => {
+    if (username) {
+      console.log("useEffect to setIsAuthenticated");
+      setIsAuthenticated(true);
+    }
+  }, [username]);
 
   return (
     <div className="h-screen w-screen flex justify-center bg-[#0a092d] font-mono">

@@ -15,6 +15,7 @@ import DeckTable from "./DeckTable";
 const Dashboard = () => {
   const navigate = useNavigate();
   const goBackHome = () => {
+    localStorage.removeItem("username");
     navigate("/");
   };
   return (

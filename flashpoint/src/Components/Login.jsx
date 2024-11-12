@@ -13,7 +13,7 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = () => {
     if (user) {
-      onLogin(); 
+      onLogin(user); // Pass the user to onLogin
       navigate("/dashboard");
     } else {
       alert("Please input your username");
@@ -34,7 +34,7 @@ const Login = ({ onLogin }) => {
 
       <button
         type="submit"
-        className="bg-[#444da1] text-white py-2 px-6 mt-5 rounded-lg shadow-lg shadow-[#2e274e]/40 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring[#7d8ec7]/50"
+        className="bg-[#444da1] text-white py-2 px-6 mt-5 rounded-lg shadow-lg shadow-[#2e274e]/40 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#7d8ec7]/50"
         onClick={handleLogin}
       >
         Login
