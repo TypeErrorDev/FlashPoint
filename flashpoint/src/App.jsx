@@ -17,9 +17,6 @@ import Settings from "./Components/Settings";
 // ---------------------------
 
 const App = () => {
-  // ---------------------------
-  // TODO: I dont even know if this works. Need to confirm this
-  // ---------------------------
   const [isAuthenticated, setIsAuthenticated] = useState(() => false);
   const [username, setUsername] = useState(() => {
     const savedUsername = localStorage.getItem("username");
