@@ -116,6 +116,8 @@ const DeckTable = () => {
     },
   ];
 
+  //TODO: create accordian for the group of deck categories
+
   return (
     <div className="flex flex-col">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -123,7 +125,7 @@ const DeckTable = () => {
           <div className="overflow-hidden">
             <table className="w-full text-left text-sm font-light ">
               {/* Deck Table Column Names */}
-              <thead className=" text-white font-medium dark:border-neutral-500">
+              <thead className="text-white font-medium dark:border-neutral-500">
                 <tr>
                   <th scope="col" className="px-6 py-4 border text-center">
                     Deck Name
@@ -154,21 +156,23 @@ const DeckTable = () => {
                   );
 
                   return (
-                    <tr key={index}>
-                      <td className="px-6 py-4 text-center text-white hover:border-white">
-                        <Link to={`/deck/${index}`}>{deck.name}</Link>
+                    <tr key={index} className="hover:bg-[#444da123]">
+                      <td className="px-6 py-4 text-center text-white">
+                        <Link to={`/deck/${index}/${deck.name}`}>
+                          {deck.name}
+                        </Link>
                       </td>
-                      <td className="px-6 py-4 text-center text-white hover:border-white">
+                      <td className="px-6 py-4 text-center text-white">
                         {cardCount}
                       </td>
-                      <td className="hidden md:table-cell px-6 py-4 text-center text-white hover:border-white">
+                      <td className="hidden md:table-cell px-6 py-4 text-center text-white">
                         {totalPoints}
                       </td>
-                      <td className="px-6 py-4 text-center text-white hover:border-white">
+                      <td className="px-6 py-4 text-center flex flex-col md:flex-row md:justify-center">
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                           Edit
                         </button>
-                        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 ml-5 rounded-full">
+                        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2 md:mt-0 md:ml-2">
                           Delete
                         </button>
                       </td>

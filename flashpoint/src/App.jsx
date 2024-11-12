@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 // ---------------------------
 import PrivateRoute from "./Components/PrivateRoute";
 import Dashboard from "./Components/Dashboard";
+import CreateDeck from "./Components/CreateDeck";
 import Login from "./Components/Login"; // Unauthenticated Home Page
 import Settings from "./Components/Settings";
 
@@ -48,6 +49,14 @@ const App = () => {
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
               <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/deck/create"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <CreateDeck />
             </PrivateRoute>
           }
         />
