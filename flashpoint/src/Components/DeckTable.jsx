@@ -4,9 +4,6 @@
 import { Link } from "react-router-dom";
 
 const DeckTable = ({ decks }) => {
-  //TODO: Create the rows for each deck in the database
-  const DECKS = [];
-
   //TODO: create accordian for the group of deck categories
 
   return (
