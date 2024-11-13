@@ -2,6 +2,7 @@
 
 1. **Change Directory to flashpoint**
 
+   - Clone project however you choose to do so
    - Run `npm i`
    - Run `npm run frontend`
 
