@@ -3,11 +3,9 @@
 1. **Change Directory to flashpoint**
 
    - Run `npm i`
+   - Run `npm run frontend`
 
 2. **Expected Terminal Output**
-
-   - A `leaderboard.db` file should be created in the Backend directory.
-   - You should see the following messages in the terminal:
 
    ```
    > flashpoint@0.0.0 frontend
@@ -22,9 +20,9 @@
 ![Main Screen](flashpoint/src/assets/Flashpoint.gif)
 
 - If it doesn't, just alt+F4 and skip this project
-- If it does populate, go to step 5
+- If it does populate, go to step 3
 
-4. Enter your name as the Username
+3. Enter your name as the Username
 
 ## Functionality that works
 
