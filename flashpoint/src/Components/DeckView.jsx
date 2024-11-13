@@ -27,11 +27,11 @@ const DeckView = ({ decks }) => {
   return (
     <div>
       <Nav />
-      <div className="flex justify-center bg-[#fff] text-black h-[450px] w-[375px] md:w-[750px] border border-slate-400 rounded-lg m-auto">
+      <div className="flex justify-center bg-[#2e385698] text-black h-[450px] w-[375px] md:w-[750px] border border-slate-400 rounded-lg m-auto">
         <div className="flex flex-col items-start m-auto p-2">
           {randomCard ? (
             <div className="mb-4">
-              <h2>{randomCard.question}</h2>
+              <p className="text-xl text-white m-auto">{randomCard.question}</p>
               {/* You can add more details here, like answers or hints if available */}
             </div>
           ) : (
@@ -39,7 +39,7 @@ const DeckView = ({ decks }) => {
           )}
           <textarea
             type="text"
-            className="text-md text-black p-2 rounded-lg mx-auto m-auto w-[300px] h-[100px] md:w-[600px] md:h-[200px] border-2 border-slate-400 focus:outline-none focus:ring-2 focus:ring-[#444da1] focus:border-transparent"
+            className="text-md  text-black p-2 rounded-lg mx-auto m-auto w-[300px] h-[100px] md:w-[600px] md:h-[200px] border-2 border-slate-400 focus:outline-none focus:ring-2 focus:ring-[#444da1] focus:border-transparent"
             placeholder="Type your answer here"
           ></textarea>
         </div>

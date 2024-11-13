@@ -134,6 +134,11 @@ const App = () => {
         },
       ],
     },
+    {
+      name: "CSS Tricks",
+      category: "CSS",
+      flashcards: [],
+    },
   ];
 
   const handleLogin = (username) => {
