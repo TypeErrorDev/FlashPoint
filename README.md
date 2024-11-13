@@ -20,9 +20,10 @@
    ```
 
 - Working endpoints
-  - `/` (Public) This is the login page
-  - `/dashboard` ( :lock: ) This is the dashboard with the decks displayed
-  - `/deck/create` (Private) Deck creation (Not implemented yet)
+  - `/` (🔓) This is the login page
+  - `/dashboard` (🔒) This is the dashboard with the decks displayed
+  - `/deck/create` (🔒) Deck creation (Not implemented yet)
+  - `
 
 3. If, by chance everything works then do the following - in the Frontend file directory, right click `index.html` and run Live Server. The following image should populate
 
