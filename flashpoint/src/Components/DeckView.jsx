@@ -9,6 +9,11 @@ const DeckView = ({ decks }) => {
 
   const [shownCards, setShownCards] = useState([]);
   const [currentCard, setCurrentCard] = useState(null);
+  const [score, setScore] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [showStats, setShowStats] = useState(false);
+
+  const totalPoints = currentDeck ? currentDeck.flashcards.length : 0;
 
   // Initialize the first card randomly
   useEffect(() => {
@@ -19,7 +24,7 @@ const DeckView = ({ decks }) => {
 
   const handleNextCard = () => {
     if (!currentDeck || shownCards.length >= currentDeck.flashcards.length) {
-      alert("All cards have been shown!");
+      setShowStats(true); // Show stats after all cards are shown
       return;
     }
 
@@ -35,9 +40,13 @@ const DeckView = ({ decks }) => {
     );
 
     setCurrentCard(currentDeck.flashcards[randomCardIndex]);
-
-    // Add this card to shown cards
     setShownCards([...shownCards, randomCardIndex]);
+  };
+
+  const handleMarkCorrect = () => {
+    setCorrectAnswers(correctAnswers + 1);
+    setScore(score + 1); // Assuming 1 point per correct answer
+    handleNextCard();
   };
 
   return (
@@ -45,39 +54,61 @@ const DeckView = ({ decks }) => {
       <Nav />
       <div className="flex justify-center bg-[#2e385698] text-black h-[450px] w-[375px] md:w-[750px] border border-slate-400 rounded-lg m-auto">
         <div className="flex flex-col items-start m-auto p-2">
-          <div className="text-white px-6">
-            {shownCards.length}/
-            {currentDeck ? currentDeck.flashcards.length : 0}
-          </div>
-          {currentCard ? (
-            <div className="mb-4">
-              <p className="text-xl text-white m-auto px-6">
-                {currentCard.question}
-              </p>
+          {showStats ? (
+            // Statistics view
+            <div className="text-white text-center">
+              <h2>Statistics</h2>
+              <p>Questions Seen: {shownCards.length}</p>
+              <p>Correct Answers: {correctAnswers}</p>
+              <p>Total Possible Points: {totalPoints}</p>
+              <p>Points Scored: {score}</p>
             </div>
           ) : (
-            <p className="text-white text-xl mb-5">
-              No flashcards available in this deck.
-            </p>
+            // Flashcard view
+            <>
+              <div className="text-white px-6">
+                Card: {shownCards.length}/{totalPoints}
+              </div>
+
+              {currentCard ? (
+                <div className="mb-4">
+                  <p className="text-xl text-white m-auto px-6">
+                    {currentCard.question}
+                  </p>
+                </div>
+              ) : (
+                <p className="text-white text-xl mb-5">
+                  No flashcards available in this deck.
+                </p>
+              )}
+              <textarea
+                type="text"
+                className="text-md text-black p-2 rounded-lg mx-auto m-auto w-[300px] h-[100px] md:w-[600px] md:h-[200px] border-2 border-slate-400 focus:outline-none focus:ring-2 focus:ring-[#444da1] focus:border-transparent"
+                placeholder="Type your answer here"
+              ></textarea>
+              <button
+                onClick={handleMarkCorrect}
+                className="bg-[#1f752d] hover:bg-[#1f752d6e] text-white font-bold py-2 px-4 m-10 rounded"
+              >
+                Mark as Correct
+              </button>
+              <button
+                onClick={handleNextCard}
+                className="bg-[#444da1] hover:bg-[#444da194] text-white font-bold py-2 px-4 m-10 md:m-0 rounded md:ml-10"
+              >
+                Next
+              </button>
+            </>
           )}
-          <textarea
-            type="text"
-            className="text-md text-black p-2 rounded-lg mx-auto m-auto w-[300px] h-[100px] md:w-[600px] md:h-[200px] border-2 border-slate-400 focus:outline-none focus:ring-2 focus:ring-[#444da1] focus:border-transparent"
-            placeholder="Type your answer here"
-          ></textarea>
-          <button
-            onClick={handleNextCard}
-            className="bg-[#444da1] hover:bg-[#444da194] text-white font-bold py-2 px-4 m-10 rounded"
-          >
-            Next
-          </button>
         </div>
       </div>
-      <Link to="/dashboard">
-        <button className="bg-[#444da1] hover:bg-[#444da194] text-white font-bold py-2 px-4 m-10 rounded">
-          Exit
-        </button>
-      </Link>
+      <div className="flex justify-center">
+        <Link to="/dashboard">
+          <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 m-10 md rounded">
+            Exit
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

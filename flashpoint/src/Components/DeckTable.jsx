@@ -47,8 +47,11 @@ const DeckTable = ({ decks }) => {
                   );
 
                   return (
-                    <tr key={index} className="hover:bg-[#444da123]">
-                      <td className="px-6 py-4 text-center text-white">
+                    <tr
+                      key={index}
+                      className="hover:bg-[#444da123] border-b-2 border-[#444da123]"
+                    >
+                      <td className="px-6 py-4 text-center text-white ">
                         <Link to={`/deck/${index}/${deck.name}`}>
                           {deck.name}
                         </Link>
