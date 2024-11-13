@@ -14,9 +14,9 @@ import DeckView from "./Components/DeckView";
 import Login from "./Components/Login"; // Unauthenticated Home Page
 import Settings from "./Components/Settings";
 
-// ---------------------------
+// ----------------------------
 // Code Begins
-// ---------------------------
+// ----------------------------
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => false);

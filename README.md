@@ -1,90 +1,58 @@
-# FlashPoint
+# Steps to Get This Project Working
 
-## Description
+1. **Change Directory to flashpoint**
 
-For this project, I will be creating a gorgeous portfolio site to showcase the great projects I've built. The site will contain a mondern landing page, an about page and a series of project pages to show off and detail at my first five projects.
+   - Run `npm i`
 
-## Table of contents
+2. **Expected Terminal Output**
 
-- [Overview](#overview)
-    - [The challenge](#the-challenge)
-    - [Links](#links)
-- [My process](#my-process)
-    - [Built with](#built-with)
-    - [How to run the project](#how-to-run-the-project)
-    - [Style Updates](#style-updates)
-    - [What I learned](#what-i-learned)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+   - A `leaderboard.db` file should be created in the Backend directory.
+   - You should see the following messages in the terminal:
 
-## Overview
+   ```
+   > flashpoint@0.0.0 frontend
+   > vite
+   VITE v5.4.10 ready in 185 ms
 
-### The challenge
+    ➜ Local: http://localhost:5173/
+    ➜ Network: use --host to expose
+    ➜ press h + enter to show help
+   ```
 
-In this project, I have created a JSON file to store all of my projects object informations.
+- Working endpoints
+  - `/` (Public) This is the login page
+  - `/dashboard` ( :lock: ) This is the dashboard with the decks displayed
+  - `/deck/create` (Private) Deck creation (Not implemented yet)
 
-I also used Pug to complete provided templates that utilize the JSON to generate the markup that is ultimately displayed in the browser.
+3. If, by chance everything works then do the following - in the Frontend file directory, right click `index.html` and run Live Server. The following image should populate
 
-I used Pug Templates, Node.js and Express to:
+![Main Screen](image.png)
 
-- Used `npm start` to start the server
-- Import the required dependencies
-- Link the JSON with the Pug templates
-- Set up routes to handle requests
-- Set up the middleware to utilize static files like CSS and Images
-- Handle errors (404's, 500's)
-- Set up a Express Server to serve the project
+- If it doesn't, just alt+F4 and skip this project
+- If it does populate, go to step 5
 
-### Links
+4. Enter your name as the Username
 
-- Live Site URL: [Express and Nodejs Portfolio hosted by Netlify](https://typeerrordev-express-portfolio.netlify.app/)
+## Functionality that works
 
-## My process
+- You can create decks and add flashcards with different points alloted.
+- You can edit the Decks, but only able to edit the name of the deck, the category and add new flashcards.
+- You can delete Decks and flashcards
+- You can go through the flashcards and will either get a Correct/Incorrect response, and either gain points or not if the answer is right/wrong
+- When you finish the deck, the score summary will calculate the points/percentage of correct answers
+- you can click Test Score Submission to see the top scores adjust
+- You can change themes from Light/Dark by clicking the Sun/Moon icon in the nav
+- Your decks card count and total possible points are calculated properly
+- You can signout properly
 
-### Built with
+## Functionality that breaks
 
-- [Javascript](https://262.ecma-international.org/13.0/#sec-intro) - ES6
-- [Node.js](https://nodejs.org/en/) - v18.7.0
-- [Express](https://expressjs.com/) - ^4.18.1
-- [Pug](https://pugjs.org/) - ^3.0.2
-- [Body-Parser](https://www.npmjs.com/package/body-parser) - ^1.20.0
-- [Nodemon](https://www.npmjs.com/package/nodemon) - ^2.0./19
+- Decks created are not persistent for each user when signed out. Need to debug userId => deck association :disappointed: :beetle:
+- Score summary is not passed to `leaderboard.db` yet :beetle:
+- Some multiple fetch issues with the Frontend fetching the Backend randomly :beetle:
+- Also need to debug the settings theme toggle, doesn't want to work at the moment :beetle:
+- Need to hide the top scores container when in settings :beetle:
 
-### How to run the project
+```
 
-- npm install
-- npm init -y
-- npm install -g nodemon
-- npm install -g pug
-- npm install -g body-parser
-- npm install -g express
-- npm start
-
-### Style Updates
-
-- Added custom CSS to the Error handling routes
-- Modified the image sizes to ensure they are aligned correctly
-- Added an Avatar image
-- Added box shadows to the Error information
-- Added transition and transform effects to the project cards
-
-### What I learned
-
-- I learned how to use the Pug Template Engine to generate the markup for the site
-- I learned how to use the Express Server to serve the site
-- I learned how to use the Body Parser to parse the request body
-- I learned how to use the Nodemon to restart the server when changes are made to the project
-- I learned how to use the Node.js Error Handling middleware to handle errors
-- I learned how to use the Node.js Static Middleware to serve static files like CSS and Images
-
-## Author
-
-- Portfolio - [www.MatthewPantel.com](https://www.matthewpantel.com)
-- LinkedIn - [@MatthewPantel](https://www.linkedin.com/in/MatthewPantel)
-- Twitter - [@TypeErrorDev](https://www.twitter.com/TypeErrorDev)
-
-## Acknowledgments
-
-I'd like to give thanks to the Student Success Mentors with Team Treehouse, the other students in their Slack channel and my friends on Discord that helped me along the way. Without everyone's support, I'd still be figuring out how to center a <div>
-
-Finally, I'd like to acknowledge Voice Chat 3 in #100Devs for assisting me with the project.
+```
