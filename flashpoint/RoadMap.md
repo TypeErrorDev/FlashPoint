@@ -17,6 +17,11 @@
 
 ## Features To Add
 
+- Implement Supabase db for:
+  - Users
+  - Decks
+  - Flashcards
+  - Leaderboards
 - Persistent login
 - Create new decks
 - Validate user answers
