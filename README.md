@@ -1,6 +1,5 @@
 # Steps to Get This Project Working
 
-
 1. **Starting server**
 
    - Clone project however you choose to do so
@@ -29,7 +28,7 @@
 
 ## Functionality that works
 
-- As of right now, I have had to hard code the Flashcards and their Decks. Will modify that in the future
+- As of right now, I had to hard code the Flashcards and their Decks. Will modify that in the future
 - You can mark your answers as correct, or go to the next flashcard
 - When you finish the deck, the score summary will calculate the points/percentage of correct answers
 - Your decks card count and total possible points are calculated properly
