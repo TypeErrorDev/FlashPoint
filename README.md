@@ -1,7 +1,10 @@
 # Steps to Get This Project Working
 
-1. **Change Directory to flashpoint**
 
+1. **Starting server**
+
+   - Clone project however you choose to do so
+   - `cd flashpoint`
    - Run `npm i`
    - Run `npm run frontend`
 
