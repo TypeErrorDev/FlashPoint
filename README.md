@@ -27,7 +27,7 @@
 ## Functionality that works
 
 - As of right now, I have had to hard code the Flashcards and their Decks. Will modify that in the future
-- You can go through the flashcards and will either get a Correct/Incorrect response, and either gain points or not if the answer is right/wrong
+- You can mark your answers as correct, or go to the next flashcard
 - When you finish the deck, the score summary will calculate the points/percentage of correct answers
 - Your decks card count and total possible points are calculated properly
 - You can signout properly
@@ -42,5 +42,6 @@
 
 - Refreshing the page returns you to the login screen.
 - Cannot create new decks/flashcards at the moment
-- Settings page is pretty much useless
+- Flashcards are not automatically validated as correct/incorrect yet.
 - Cannot create/edit/delete decks yet
+- Settings page is pretty much useless

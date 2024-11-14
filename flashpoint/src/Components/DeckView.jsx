@@ -69,10 +69,9 @@ const DeckView = ({ decks }) => {
               <div className="text-white px-6">
                 Card: {shownCards.length}/{totalPoints}
               </div>
-
               {currentCard ? (
                 <div className="mb-4">
-                  <p className="text-xl text-white m-auto px-6">
+                  <p className="text-xl text-white m-auto px-6 text-wrap">
                     {currentCard.question}
                   </p>
                 </div>
